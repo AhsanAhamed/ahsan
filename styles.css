@@ -847,9 +847,10 @@ h1, h2 {
 
 /* Timeline Section */
 .timeline-section {
-    width: 65%; /* Takes 65% of the width */
+    width: 65%; /* Takes 65% of the width on larger screens */
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 /* Timeline Container */
@@ -863,6 +864,7 @@ h1, h2 {
     margin-bottom: 20px;
     position: relative;
     padding-left: 50px;
+    flex-direction: column; /* Ensure content stacks vertically */
 }
 
 /* Timeline Icon */
@@ -914,9 +916,77 @@ h1, h2 {
 .timeline-content button:hover {
     background-color: #004b87;
 }
+
+/* Responsive Design for Tablets and Mobile */
+
+/* Tablet View (max-width: 768px) */
+@media (max-width: 768px) {
+    .timeline-section {
+        width: 80%; /* Increase width to make better use of screen */
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        padding-left: 0;
+        width: 100%; /* Make items take full width */
+    }
+
+    .timeline-content {
+        width: 90%; /* Make content box wider on tablets */
+    }
+
+    .timeline-icon {
+        font-size: 24px; /* Adjust icon size */
+    }
+
+    .timeline-content h3 {
+        font-size: 18px; /* Adjust heading size */
+    }
+
+    .timeline-content p {
+        font-size: 14px; /* Adjust paragraph text size */
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+/* Mobile View (max-width: 480px) */
+@media (max-width: 480px) {
+    .timeline-section {
+        width: 100%; /* Make section full width */
+    }
+
+    .timeline-item {
+        padding-left: 0;
+        margin-bottom: 15px; /* Reduce space between items */
+    }
+
+    .timeline-content {
+        width: 100%; /* Make content boxes full width */
+    }
+
+    .timeline-icon {
+        font-size: 20px; /* Smaller icons for mobile */
+    }
+
+    .timeline-content h3 {
+        font-size: 16px; /* Smaller headings for mobile */
+    }
+
+    .timeline-content p {
+        font-size: 12px; /* Smaller paragraph text */
+    }
+
+    button {
+        width: 100%; /* Button takes full width */
+        font-size: 14px;
+    }
+}
+
  
 /* Adjusting the profile image size */
-
 /* Global Styles */
 * {
     margin: 0;
@@ -1066,3 +1136,5 @@ footer {
         font-size: 10px;
     }
 }
+
+
