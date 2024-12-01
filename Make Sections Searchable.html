@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Searchable Sections</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .content-section {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .content-section h2 {
+      margin-top: 0;
+    }
+
+    #searchInput {
+      padding: 10px;
+      font-size: 1em;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    #noResults {
+      display: none;
+      color: red;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Search Input -->
+  <input type="text" id="searchInput" placeholder="Search sections..." oninput="searchContent()">
+
+  <!-- No Results Message -->
+  <div id="noResults">No results found.</div>
+
+  <!-- Content Sections -->
+  <div class="content-section">
+    <h2>Personal Details</h2>
+    <p>This is my personal info...</p>
+  </div>
+
+  <div class="content-section">
+    <h2>Education</h2>
+    <p>Details about my education...</p>
+  </div>
+
+  <div class="content-section">
+    <h2>Skills</h2>
+    <p>Details about my skills...</p>
+  </div>
+
+  <script>
+    function searchContent() {
+      // Get the search input and trim extra whitespace
+      let searchInput = document.getElementById("searchInput").value.trim().toLowerCase();
+    
+      // Get all content sections
+      let contentSections = document.querySelectorAll('.content-section');
+      let found = false;  // Flag to track if any content matches
+    
+      // Loop through each section and check if it matches the search input
+      contentSections.forEach(function (section) {
+        let sectionText = section.textContent.toLowerCase();
+    
+        // If the section text matches the search input, show it
+        if (sectionText.includes(searchInput)) {
+          section.style.display = 'block';
+          found = true;  // Mark that a matching section was found
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    
+      // Display "No results" message if no matching sections
+      if (found) {
+        document.getElementById('noResults').style.display = 'none';
+      } else {
+        document.getElementById('noResults').style.display = 'block';
+      }
+    }
+  </script>
+  
+</body>
+</html>

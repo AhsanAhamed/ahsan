@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rifas Ahsan Ahamed - Personal Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0d47a1;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+    display: block;
+    margin: 0 auto 20px;
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 4px solid transparent;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.profile-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid #0d47a1;
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.1);
+    opacity: 0;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    border-color: #0d47a1;
+}
+
+.profile-image:hover::after {
+    transform: scale(1);
+    opacity: 1;
+}
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px 0;
+        }
+
+        .details {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .details strong {
+            color: #0d47a1;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .contact-info a {
+            color: #0d47a1;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            background-color: #0d47a1;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+        }
+
+        .button-container a:hover {
+            background-color: #004b87;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>👤 Personal Details</h1>
+        <img src="ahsan.jpg" alt="Profile Picture" class="profile-image">
+        <hr>
+        <div class="details">
+            <p><strong>Full Name:</strong> Rifas Ahsan Ahamed</p>
+            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Profession:</strong> Engineer</p>
+            <p><strong>Current Education:</strong> University of Jaffna, Faculty of Engineering</p>
+            <p><strong>Address:</strong> Thoppur, Trincomalee</p>
+            <p><strong>Date of Birth:</strong> 02-Dec-2001</p>
+            <p><strong>Nationality:</strong> Sri Lankan</p>
+            <p><strong>Languages Known:</strong></p>
+            <ul>
+                <li>Tamil (100%)</li>
+                <li>English (100%)</li>
+                <li>Sinhala (50%)</li>
+            </ul>
+            <p><strong>Educational Background:</strong></p>
+            <ul>
+                <li>Grade 1 - 11: T/MU/AL-HAMRA CENTER COLLEGE</li>
+                <li>Grade 12 - 13: T/R.K.M SRI KONESWARA HINDU COLLEGE</li>
+            </ul>
+            <p><strong>Contact Information:</strong></p>
+            <ul>
+                <li>Email: <a href="mailto:rifasahsanahamed01@gmail.com">rifasahsanahamed01@gmail.com</a></li>
+                <li>Phone: +94-757563100</li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/rifas-ahsan-ahamed-379b7b309?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">RIFAS AHSAN AHAMED</a></li>
+            </ul>
+        </div>
+        <div class="button-container">
+            <a href="contact.html">Contact Me</a>
+        </div>
+    </div>
+</body>
+
+</html>

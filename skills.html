@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9eff1; /* Professional light background */
+            color: #333; /* Dark text color for readability */
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #0d47a1;
+            font-size: 36px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .skills-section {
+            margin: 30px 0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff; /* White background for each section */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .skills-section:hover {
+            transform: scale(1.05);
+        }
+
+        /* Section Titles */
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            background-color: #0d47a1;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h2:hover {
+            background-color: #1976d2;
+        }
+
+        h2:after {
+            content: ' ▼'; /* Add arrow icon */
+        }
+
+        .skills-section.open h2:after {
+            content: ' ▲'; /* Change arrow to up when open */
+        }
+
+        /* Skill Box Styling */
+        .skill-box {
+            margin: 10px 0;
+            padding: 15px;
+            background-color: #f5f5f5; /* Soft background for details */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-box h3 {
+            color: #0d47a1; /* Title color for skill boxes */
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .skill-box p {
+            font-size: 16px;
+            color: #555; /* Lighter color for skill details */
+        }
+
+        /* Hidden Class to Toggle Content */
+        .hidden {
+            display: none;
+            opacity: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            transition: opacity 0.3s ease-out, height 0s 0.3s;
+        }
+
+        .skills-section.open .hidden {
+            display: block;
+            opacity: 1;
+            height: auto;
+            padding: 10px;
+            margin: 10px 0;
+            transition: opacity 0.3s ease-in, height 0.3s ease-in;
+        }
+
+        /* Table Styling */
+        .table-container {
+            margin-top: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 60%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #0d47a1;
+            color: white;
+            font-size: 18px;
+        }
+
+        table td {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .table-container h2 {
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #0d47a1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Skills</h1>
+
+    <!-- Technical Skills Section -->
+    <div class="skills-section technical-skills">
+        <h2 onclick="toggleSection('technical')">Technical Skills</h2>
+        <div id="technical" class="hidden">
+            <div class="skill-box">
+                <h3>Software</h3>
+                <p>AutoCAD, MATLAB, MS Office, Visual Studio Code</p>
+            </div>
+            <div class="skill-box">
+                <h3>Programming Languages</h3>
+                <p>Python, C++, Java, HTML</p>
+            </div>
+            <div class="skill-box">
+                <h3>Tools</h3>
+                <p>Photoshop, Excel, Engineering Tools</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Soft Skills Section -->
+    <div class="skills-section soft-skills">
+        <h2 onclick="toggleSection('soft')">Soft Skills</h2>
+        <div id="soft" class="hidden">
+            <div class="skill-box">
+                <h3>Communication</h3>
+            </div>
+            <div class="skill-box">
+                <h3>Leadership</h3>
+            </div>
+            <div class="skill-box">
+                <h3>Teamwork</h3>
+            </div>
+            <div class="skill-box">
+                <h3>Problem Solving</h3>
+            </div>
+            <div class="skill-box">
+                <h3>Time Management</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Proficiency Section -->
+    <div class="skills-section language-proficiency">
+        <h2 onclick="toggleSection('language')">Language Proficiency</h2>
+        <div id="language" class="hidden">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Language</th>
+                        <th>Proficiency (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>தமிழ் (Tamil)</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>English</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>සිංහල (Sinhala)</td>
+                        <td>50%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(section) {
+            var sectionElement = document.getElementById(section);
+            var parentSection = sectionElement.parentNode;
+            parentSection.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY CV</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add FontAwesome CDN for search icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="ahsan.jpg" alt="Logo" class="logo-image">
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="personal.html">Personal</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+     <!-- Search Bar in Navbar -->
+     <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <!-- Search icon (using FontAwesome) -->
+        <button onclick="searchContent()">
+          <i class="fas fa-search"></i> <!-- Search icon -->
+        </button>
+      </div>
+    </nav>
+  
+    <!-- Content Section -->
+    <div class="content">
+        <h1>Welcome to My Profile</h1>
+        <div class="profile-timeline">
+          <!-- Profile Image Section -->
+          <div class="profile-section">
+              <img src="ahsan.jpg" alt="Profile Picture" class="profile-image">
+          </div>
+      
+          <!-- Timeline Section -->
+          <div class="timeline-section">
+              <div class="timeline-item">
+                  <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                  <div class="timeline-content">
+                      <h3>Graduation</h3>
+                      <p>Upload Soon</p>
+                  </div>
+              </div>
+          
+              <div class="timeline-item">
+                  <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                  <div class="timeline-content">
+                      <h3>Learned Programming</h3>
+                      <p>Upload Soon</p>
+                  </div>
+              </div>
+          
+              <div class="timeline-item">
+                  <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                  <div class="timeline-content">
+                      <h3>First Internship</h3>
+                      <p>Upload Soon</p>
+                  </div>
+              </div>
+          
+              <div class="timeline-item">
+                  <div class="timeline-icon"><i class="fas fa-cogs"></i></div>
+                  <div class="timeline-content">
+                      <h3>Completed Major Project</h3>
+                      <p>Upload Soon</p>
+                  </div>
+              </div>
+          
+              <div class="timeline-item">
+                  <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
+                  <div class="timeline-content">
+                      <h3>Achievement</h3>
+                      <p>Upload Soon</p>
+                  </div>
+              </div>
+          
+              <div class="timeline-item">
+                  <div class="timeline-icon"><i class="fas fa-arrow-right"></i></div>
+                  <div class="timeline-content">
+                      <button onclick="window.location.href='projects.html'">Explore My Projects</button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+    
+     <!-- Include JavaScript at the end -->
+  <script>
+    // Scroll Animation for Timeline Items
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    window.addEventListener('scroll', () => {
+        timelineItems.forEach(item => {
+            const itemPosition = item.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            if (itemPosition < screenPosition) {
+                item.classList.add('show');
+            } else {
+                item.classList.remove('show');
+            }
+        });
+    });
+  </script>
+      <!-- Social Media Links -->
+<div class="social-media-links">
+    <a href="https://www.instagram.com/r_ahsn_ahmd?igsh=MTkzbXJtNDczajNxeQ==" target="_blank" class="social-icon instagram">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61550580093103&mibextid=ZbWKwL" target="_blank" class="social-icon facebook">
+        <i class="fab fa-facebook"></i>
+        <span>Facebook</span>
+    </a>
+    <a href="https://wa.me/+94757563100" target="_blank" class="social-icon whatsapp">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+    <a href="https://www.linkedin.com/in/rifas-ahsan-ahamed-379b7b309?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="social-icon linkedin">
+        <i class="fab fa-linkedin"></i>
+        <span>LinkedIn</span>
+    </a>
+</div>
+
+<style>
+    .social-media-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 50px;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .social-icon {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 24px;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 8px;
+        color: white;
+        background-color: #333;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .social-icon i {
+        font-size: 24px;
+    }
+
+    .social-icon span {
+        display: none;
+        font-size: 16px;
+    }
+
+    .social-icon:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-icon:hover span {
+        display: inline-block;
+        font-size: 18px;
+        color: #fff;
+        transition: color 0.3s ease;
+    }
+
+    .instagram {
+        background-color: #E4405F;
+    }
+
+    .facebook {
+        background-color: #1877F2;
+    }
+
+    .whatsapp {
+        background-color: #25D366;
+    }
+
+    .linkedin {
+        background-color: #0A66C2;
+    }
+</style>
+
+<!-- FontAwesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+           /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0078D7;
+            font-size: 24px;
+        }
+
+        .content-section {
+            background-color: #ffffff;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .content-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-section h2 {
+            margin-bottom: 10px;
+            color: #0056b3;
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #0078D7;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #005a9e;
+        }
+
+        button i {
+            margin-right: 6px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0078D7;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 8px 0;
+            background-color: #0056b3;
+            color: #fff;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function navigateToPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Rifas Ahsan Ahamed's Portfolio</h1>
+
+        <div class="content-section" id="personal-details">
+            <h2>About Me</h2>
+            <p><b>I'm Rifas Ahsan Ahamed, an engineering student at the University of Jaffna. I'm passionate about solving complex problems and contributing to innovative solutions in engineering.</b></p>
+            <button onclick="navigateToPage('personal.html')"><i>🔍</i>Personal Details</button>
+        </div>
+
+        <div class="content-section" id="education-details">
+            <h2>Education</h2>
+            <p><b>Excelling in O/L and A/L exams, I achieved top results in subjects like Mathematics, Science, and Tamil, with distinctions in Combined Maths, Physics, and Chemistry.</b></p>
+            <button onclick="navigateToPage('education.html')"><i>📚</i>Education Details</button>
+        </div>
+
+        <div class="content-section" id="skills-details">
+            <h2>Skills</h2>
+            <p><b>Proficient in Python, C++, Java, AutoCAD, MATLAB, and Visual Studio Code, with strong leadership, communication, and problem-solving skills.</b></p>
+            <button onclick="navigateToPage('skills.html')"><i>💡</i>View Skills</button>
+        </div>
+
+        <div class="content-section" id="projects-details">
+            <h2>Projects</h2>
+            <p><b>Currently engaged in various engineering and software projects that enhance my technical expertise and creativity.</b></p>
+            <button onclick="navigateToPage('projects.html')"><i>🛠️</i>View Projects</button>
+        </div>
+
+        <div class="content-section" id="contact-details">
+            <h2>Contact</h2>
+            <p><b>Email: <a href="mailto:rifasahsanahamed01@gmail.com">rifasahsanahamed01@gmail.com</b></a></p>
+            <button onclick="navigateToPage('contact.html')"><i>✉️</i>Contact Me</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Rifas Ahsan Ahamed | All Rights Reserved
+    </footer>
+
+    <script>
+        function searchContent() {
+            var input = document.getElementById('searchInput').value.toLowerCase();
+
+            // Mapping the search term to corresponding page URLs
+            var pages = {
+                'education': 'education.html',
+                'personal': 'personal.html',
+                'skills': 'skills.html',
+                'projects': 'projects.html',
+                'contact': 'contact.html',
+            };
+
+            // Check if the input matches any key in the pages object
+            if (pages[input]) {
+                // Redirect to the corresponding page if a match is found
+                window.location.href = pages[input];
+            } else {
+                alert("No matching page found!");
+            }
+        }
+    </script>
+</body>
+</html>
