@@ -3,39 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Rifas Ahsan Ahamed for email, phone, or social media inquiries.">
+  <meta name="keywords" content="Rifas Ahsan Ahamed, Contact, Email, LinkedIn, WhatsApp, Instagram, Social Media">
   <title>Contact | Rifas Ahsan Ahamed</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Add your favicon -->
   <style>
+    :root {
+      --primary-color: #0d47a1;
+      --hover-color: #004b87;
+      --font-size-large: 36px;
+      --font-size-medium: 18px;
+      --font-family-primary: 'Roboto', sans-serif;
+      --font-family-secondary: 'Times New Roman', Times, serif;
+      --spacing-medium: 20px;
+      --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      --transition-time: 0.3s;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: var(--font-family-primary);
       margin: 0;
       padding: 0;
       background-color: #f0f4f8;
     }
 
     .container {
-      width: 90%;
+      width: 100%;
       max-width: 1200px;
       margin: 50px auto;
       padding: 40px;
       background-color: #ffffff;
       border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--card-shadow);
       text-align: center;
+      box-sizing: border-box;
     }
 
     h1 {
       color: #333;
-      font-size: 36px;
+      font-size: var(--font-size-large);
       margin-bottom: 30px;
       font-weight: 600;
     }
 
     .contact-section {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Flexibility to adapt for all devices */
+      gap: var(--spacing-medium);
       margin-bottom: 40px;
     }
 
@@ -44,17 +59,18 @@
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
+      transition: all var(--transition-time) ease;
     }
 
     .contact-item:hover {
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       transform: translateY(-5px);
+      background-color: #e8f0fe;
     }
 
     .contact-item i {
       font-size: 24px;
-      color: #0d47a1;
+      color: var(--primary-color);
       margin-right: 15px;
       vertical-align: middle;
     }
@@ -62,38 +78,82 @@
     .contact-item a {
       color: #333;
       text-decoration: none;
-      font-size: 18px;
+      font-size: var(--font-size-medium);
       font-weight: 500;
       display: flex;
       align-items: center;
-      transition: color 0.3s;
+      transition: color var(--transition-time);
     }
 
     .contact-item a:hover {
-      color: #0d47a1;
+      color: var(--primary-color);
     }
 
     .back-button {
       display: inline-block;
       padding: 12px 25px;
-      background-color: #0d47a1;
+      background-color: var(--primary-color);
       color: #fff;
-      font-size: 18px;
+      font-size: var(--font-size-medium);
       text-decoration: none;
       border-radius: 8px;
-      transition: background-color 0.3s;
+      transition: background-color var(--transition-time), transform 0.2s ease;
       margin-top: 20px;
     }
 
     .back-button:hover {
-      background-color: #004b87;
+      background-color: var(--hover-color);
+      transform: scale(1.05);
+    }
+
+    /* Input Fields Styling */
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: var(--font-size-medium);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: var(--spacing-medium);
+      box-sizing: border-box;
+      transition: border-color var(--transition-time), box-shadow var(--transition-time);
+    }
+
+    input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
+      border-color: var(--primary-color);
+      outline: none;
+      box-shadow: 0 0 5px rgba(13, 71, 161, 0.3);
     }
 
     /* Mobile Responsiveness */
     @media screen and (max-width: 768px) {
       .contact-section {
         grid-template-columns: 1fr;
+        margin: 0 20px;
       }
+
+      .container {
+        padding: 20px;
+      }
+
+      .contact-item {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .back-button {
+        padding: 10px 20px;
+      }
+
+      input[type="text"], input[type="email"], input[type="tel"], textarea {
+        font-size: 16px;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
@@ -104,33 +164,33 @@
     <!-- Contact Section -->
     <div class="contact-section">
       <div class="contact-item">
-        <a href="mailto:rifasahsanahamed01@gmail.com">
-          <i class="fas fa-envelope"></i> Email: rifasahsanahamed01@gmail.com
+        <a href="mailto:rifasahsanahamed01@gmail.com" aria-label="Email Rifas Ahsan Ahamed">
+          <i class="fas fa-envelope" aria-hidden="true"></i> Email: rifasahsanahamed01@gmail.com
         </a>
       </div>
       <div class="contact-item">
-        <a href="tel:+94757563100">
-          <i class="fas fa-phone-alt"></i> Phone: +94-757563100
+        <a href="tel:+94757563100" aria-label="Call Rifas Ahsan Ahamed">
+          <i class="fas fa-phone-alt" aria-hidden="true"></i> Phone: +94-757563100
         </a>
       </div>
       <div class="contact-item">
-        <a href="https://www.linkedin.com/in/rifas-ahsan-ahamed-379b7b309" target="_blank">
-          <i class="fab fa-linkedin"></i> LinkedIn: RIFAS AHSAN AHAMED
+        <a href="https://www.linkedin.com/in/rifas-ahsan-ahamed-379b7b309" target="_blank" rel="noopener noreferrer" aria-label="Visit Rifas Ahsan Ahamed LinkedIn profile">
+          <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn: RIFAS AHSAN AHAMED
         </a>
       </div>
       <div class="contact-item">
-        <a href="https://www.instagram.com/r_ahsn_ahmd?igsh=MTkzbXJtNDczajNxeQ==" target="_blank">
-          <i class="fab fa-instagram"></i> Instagram: r_ahsn_ahmd
+        <a href="https://www.instagram.com/r_ahsn_ahmd?igsh=MTkzbXJtNDczajNxeQ==" target="_blank" rel="noopener noreferrer" aria-label="Visit Rifas Ahsan Ahamed Instagram profile">
+          <i class="fab fa-instagram" aria-hidden="true"></i> Instagram: r_ahsn_ahmd
         </a>
       </div>
       <div class="contact-item">
-        <a href="https://www.facebook.com/profile.php?id=61550580093103&mibextid=ZbWKwL" target="_blank">
-          <i class="fab fa-facebook"></i> Facebook: Rifas Ahsan Ahamed
+        <a href="https://www.facebook.com/profile.php?id=61550580093103&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" aria-label="Visit Rifas Ahsan Ahamed Facebook profile">
+          <i class="fab fa-facebook" aria-hidden="true"></i> Facebook: Rifas Ahsan Ahamed
         </a>
       </div>
       <div class="contact-item">
-        <a href="https://wa.me/+94757563100" target="_blank">
-          <i class="fab fa-whatsapp"></i> WhatsApp: +94-757563100
+        <a href="https://wa.me/+94757563100" target="_blank" rel="noopener noreferrer" aria-label="Message Rifas Ahsan Ahamed on WhatsApp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp: +94-757563100
         </a>
       </div>
     </div>
