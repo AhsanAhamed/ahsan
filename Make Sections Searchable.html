@@ -7,7 +7,7 @@
   <style>
     /* General Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Times New Roman', Times, serif;
       background-color: #f4f4f9;
       margin: 0;
       padding: 20px;
@@ -19,6 +19,7 @@
       background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 5px;
+      transition: opacity 0.5s ease-in-out;
     }
 
     .content-section h2 {
@@ -40,6 +41,24 @@
       color: red;
       text-align: center;
     }
+
+    .highlight {
+      background-color: yellow;
+    }
+
+    .clear-btn {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: #ff6347;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .clear-btn:hover {
+      background-color: #ff4500;
+    }
   </style>
 </head>
 <body>
@@ -47,53 +66,70 @@
   <!-- Search Input -->
   <input type="text" id="searchInput" placeholder="Search sections..." oninput="searchContent()">
 
+  <!-- Clear Button -->
+  <button class="clear-btn" onclick="clearSearch()">Clear Search</button>
+
   <!-- No Results Message -->
   <div id="noResults">No results found.</div>
 
   <!-- Content Sections -->
   <div class="content-section">
     <h2>Personal Details</h2>
-    <p>This is my personal info...</p>
+    <p>This is my personal info. I love to learn new things.</p>
   </div>
 
   <div class="content-section">
     <h2>Education</h2>
-    <p>Details about my education...</p>
+    <p>Details about my education background. I graduated from XYZ University.</p>
   </div>
 
   <div class="content-section">
     <h2>Skills</h2>
-    <p>Details about my skills...</p>
+    <p>Details about my skills. I am skilled in web development, design, and coding.</p>
   </div>
 
   <script>
     function searchContent() {
-      // Get the search input and trim extra whitespace
       let searchInput = document.getElementById("searchInput").value.trim().toLowerCase();
-    
-      // Get all content sections
       let contentSections = document.querySelectorAll('.content-section');
-      let found = false;  // Flag to track if any content matches
-    
-      // Loop through each section and check if it matches the search input
+      let found = false;
+
       contentSections.forEach(function (section) {
         let sectionText = section.textContent.toLowerCase();
-    
-        // If the section text matches the search input, show it
+        let heading = section.querySelector('h2').textContent.toLowerCase();
+        let paragraph = section.querySelector('p').textContent.toLowerCase();
+
+        // Remove previous highlights
+        section.innerHTML = section.innerHTML.replace(/<span class="highlight">/g, "").replace(/<\/span>/g, "");
+
+        // If the section contains the search query, show it
         if (sectionText.includes(searchInput)) {
           section.style.display = 'block';
-          found = true;  // Mark that a matching section was found
+          found = true;
+
+          // Highlight matching text
+          if (searchInput && sectionText.includes(searchInput)) {
+            section.innerHTML = section.innerHTML.replace(new RegExp(searchInput, 'gi'), function(match) {
+              return `<span class="highlight">${match}</span>`;
+            });
+          }
         } else {
           section.style.display = 'none';
         }
       });
-    
+
       // Display "No results" message if no matching sections
       if (found) {
         document.getElementById('noResults').style.display = 'none';
       } else {
         document.getElementById('noResults').style.display = 'block';
       }
+    }
+
+    // Clear the search input and reset content visibility
+    function clearSearch() {
+      document.getElementById("searchInput").value = "";
+      searchContent();
     }
   </script>
   
