@@ -136,18 +136,21 @@
     }
 
     /* Navigation Bar */
-    nav {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px;
-        background-color: #1a73e8;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+    /* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #1a73e8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease; /* Added transition for background color */
+}
 
-    nav .logo img {
-        width: 50px;
-        border-radius: 8px;
-    }
+nav:hover {
+    background-color: #0b84f3; /* New background color when hovered */
+}
+
+   
 
     nav ul {
         list-style: none;
